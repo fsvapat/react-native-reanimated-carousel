@@ -1,4 +1,4 @@
-import type { StyleProp, ViewStyle } from "react-native";
+import type { StyleProp, ViewProps, ViewStyle } from "react-native";
 import type { PanGesture } from "react-native-gesture-handler";
 import type { SharedValue, WithSpringConfig, WithTimingConfig } from "react-native-reanimated";
 import type Animated from "react-native-reanimated";
@@ -56,7 +56,21 @@ export interface WithTimingAnimation {
 
 export type WithAnimation = WithSpringAnimation | WithTimingAnimation;
 
-export type TCarouselProps<T = any> = {
+type CarouselViewProps = Pick<
+  ViewProps,
+  | "onStartShouldSetResponder"
+  | "onMoveShouldSetResponder"
+  | "onStartShouldSetResponderCapture"
+  | "onMoveShouldSetResponderCapture"
+  | "onResponderGrant"
+  | "onResponderReject"
+  | "onResponderMove"
+  | "onResponderRelease"
+  | "onResponderTerminationRequest"
+  | "onResponderTerminate"
+>;
+
+export type TCarouselProps<T = any> = CarouselViewProps & {
   /**
    * @test_coverage ✅ tested in Carousel.test.tsx > should handle the ref props
    */

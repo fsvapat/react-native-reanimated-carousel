@@ -52,6 +52,16 @@ const IScrollViewGesture: React.FC<PropsWithChildren<Props>> = (props) => {
       maxScrollDistancePerSwipe,
       minScrollDistancePerSwipe,
       fixedDirection,
+      onStartShouldSetResponder,
+      onMoveShouldSetResponder,
+      onStartShouldSetResponderCapture,
+      onMoveShouldSetResponderCapture,
+      onResponderGrant,
+      onResponderReject,
+      onResponderMove,
+      onResponderRelease,
+      onResponderTerminationRequest,
+      onResponderTerminate,
     },
     common: { size },
     layout: { updateContainerSize },
@@ -456,6 +466,16 @@ const IScrollViewGesture: React.FC<PropsWithChildren<Props>> = (props) => {
         onTouchStart={onTouchBegin}
         onTouchEnd={onTouchEnd}
         onLayout={onLayout}
+        onStartShouldSetResponder={onStartShouldSetResponder}
+        onMoveShouldSetResponder={onMoveShouldSetResponder}
+        onStartShouldSetResponderCapture={onStartShouldSetResponderCapture}
+        onMoveShouldSetResponderCapture={onMoveShouldSetResponderCapture}
+        onResponderGrant={onResponderGrant}
+        onResponderReject={onResponderReject}
+        onResponderMove={onResponderMove}
+        onResponderRelease={onResponderRelease}
+        onResponderTerminationRequest={onResponderTerminationRequest}
+        onResponderTerminate={onResponderTerminate}
       >
         {props.children}
       </Animated.View>
